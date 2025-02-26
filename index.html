@@ -215,17 +215,25 @@
 
           <p><strong>Methods</strong></p>
           <p>
-            Our algorithm takes advantage of a vision-based approach to estimate the motion, contact forces, and torques of a climber, integrating 3D motion reconstruction with dynamics modeling. First, we use a foundational model (Khirodkar et al., 2024) to estimate the pose in each video frame. These estimates are then lifted to 3D to compute joint motions and forces. Contact interactions with the climbing surface are then modeled, assuming rigid and non-sliding support. Finally, we rely on inverse dynamics to refine all our estimates, as in Li et al., 2022. By enforcing the consistency between motion, forces, and torques, we improve the precision of both joint trajectories and force predictions.
+            Our algorithm takes advantage of a vision-based approach to estimate the motion, contact forces, and torques of a climber, integrating 3D motion reconstruction with dynamics modeling. First, we use a foundational model (Khirodkar et al. 2024) to estimate the pose in each video frame. These estimates are then lifted to 3D to compute joint motions and forces.  Contact interactions with the climbing surface are then modeled, assuming rigid and non-sliding support. Finally, we rely on inverse dynamics to refine all our estimates, as in Li et al. 2022. By enforcing the consistency between motion, forces, and torques, we improve the precision of both joint trajectories and force predictions.
           </p>
 
           <p><strong>Results</strong></p>
           <p>
-            We tested our method on videos of climbers training on a campus-board with force sensors embedded into it to provide ground-truth values. Even though our rigid contact model is simplistic, the overall force trends are correctly captured and align well with the sensor data.
+            We tested our method in videos of climbers training on a campusboard with forces sensors embedded to provide ground-truth values. Although our rigid contact model is simplistic, the overall force trends are captured and generally aligns with the sensor data, showing the potential of our estimation pipeline. Further development will explore methods of improving force estimation accuracy. Videos and graphs can be accessed at (https://rihat99.github.io/climb_force).
           </p>
 
           <p><strong>Conclusion</strong></p>
           <p>
-            This study presents an easy-to-deploy vision-based method for estimating climber motion and contact forces without any specialized hardware. The results indicate that our approach effectively reconstructs force trends and improves motion smoothness through optimization. Future work will focus on refining the contact model for enhanced force estimation not only indoors but also outdoors on real mountains.
+            This study presents an easy-to-deploy vision-based method to estimate climber motion and contact forces without specialized hardware. The results indicate that our approach effectively reconstructs force trends and improves motion smoothness through optimization. Future work will focus on refining the contact model for improved force estimation not only indoors but also outdoors in real mountains.
+          </p>
+          
+          <p><strong>References</strong></p>
+          <p>
+            Khirodkar, R., Bagautdinov, T., Martinez, J., Zhaoen, S., James, A., Selednik, P., Anderson, S., & Saito, S. (2024). Sapiens: Foundation for human vision models. Lecture Notes in Computer Science, 206–228. https://doi.org/10.1007/978-3-031-73235-5_12
+          </p>
+          <p>
+            Li, Z., Sedlar, J., Carpentier, J., Laptev, I., Mansard, N., & Sivic, J. (2022). Estimating 3D motion and forces of human–object interactions from internet videos. International Journal of Computer Vision, 130(2), 363–383. https://doi.org/10.1007/s11263-021-01540-1
           </p>
         </div>
       </div>
