@@ -184,7 +184,7 @@
 <!-- End Video Section -->
 
 <!-- Paper abstract -->
-<section class="section hero is-light">
+<!-- <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -192,6 +192,41 @@
         <div class="content has-text-justified">
           <p>
             Accurately estimating climber motion and contact forces is essential for performance evaluation and judging. Traditional methods using force sensors or motion capture systems provide precise data but lack scalability and require controlled environments. This study proposes a vision-only approach to estimate motion and contact forces without additional instrumentation. Our method extracts 2D and 3D pose trajectories, estimates contact timings under a rigid contact assumption, and optimizes for force estimation and trajectory refinement while enforcing physical constraints. Validation against force sensor data shows that while the rigid contact model introduces some non-smooth variations, overall force trends are well captured, and motion smoothness improves through optimization. The results demonstrate the feasibility of a scalable, vision-based approach for climbing analysis, with future work focusing on refining the contact model and expanding applicability across diverse climbing techniques.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End paper abstract -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p><strong>Abstract:</strong></p>
+
+          <p><strong>Aim</strong></p>
+          <p>
+            An accurate evaluation of climbing performance depends on the precise estimation of motion and the exerted forces. Traditional methods, such as force sensors or motion capture systems, provide precise data but lack flexibility and require controlled environments. Instead, we propose a vision-based method for estimating motion, forces, and torques with a single camera and without specialized instruments. This presents a significant challenge, since these forces are not directly visible, so they must be inferred from movement. Using inferred forces to estimate torques, we can analyze climbing techniques in more detail, identify inefficiencies, and help climbers optimize their performance.
+          </p>
+
+          <p><strong>Methods</strong></p>
+          <p>
+            Our algorithm takes advantage of a vision-based approach to estimate the motion, contact forces, and torques of a climber, integrating 3D motion reconstruction with dynamics modeling. First, we use a foundational model (Khirodkar et al., 2024) to estimate the pose in each video frame. These estimates are then lifted to 3D to compute joint motions and forces. Contact interactions with the climbing surface are then modeled, assuming rigid and non-sliding support. Finally, we rely on inverse dynamics to refine all our estimates, as in Li et al., 2022. By enforcing the consistency between motion, forces, and torques, we improve the precision of both joint trajectories and force predictions.
+          </p>
+
+          <p><strong>Results</strong></p>
+          <p>
+            We tested our method on videos of climbers training on a campus-board with force sensors embedded into it to provide ground-truth values. Even though our rigid contact model is simplistic, the overall force trends are correctly captured and align well with the sensor data.
+          </p>
+
+          <p><strong>Conclusion</strong></p>
+          <p>
+            This study presents an easy-to-deploy vision-based method for estimating climber motion and contact forces without any specialized hardware. The results indicate that our approach effectively reconstructs force trends and improves motion smoothness through optimization. Future work will focus on refining the contact model for enhanced force estimation not only indoors but also outdoors on real mountains.
           </p>
         </div>
       </div>
